@@ -1,0 +1,155 @@
+/********** General **********/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'roboto';
+}
+
+/********** Colors **********/
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+
+$gray: #eaeaea;
+$lightergray: #f6f6f6;
+$lightpruple: #f5edff;
+$white: #fff;
+
+/********** Partie Mixins **********/
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin btn-rounded {
+	border: none;
+		background-color: $color-primary;
+		border-radius: 999px;
+		padding: .7rem 1.1rem .7rem 1.1rem;
+		color: #fff;
+		margin-top: 1.5rem;
+		margin-bottom: 3rem;
+}
+
+@mixin numbers {
+	position: absolute;
+		font-size: 0.7rem;
+		left: -3%;
+		text-align: center;
+		width: 5px;
+		height: 0.2rem;
+		padding: 0.6rem;
+		color: $white;
+		background-color: $color-primary;
+		border-radius: 999px;
+}
+
+@mixin img {
+	position: absolute;
+		left: 8%;
+		text-align: center;
+		width: 2rem;
+}
+
+@mixin info {
+	position: absolute;
+		left: 24%;
+		font-size: 0.8rem;
+		font-weight: bold;
+}
+
+/********** Partie Header **********/
+.heading__card {
+	@include flex-center;
+	.heading__logo {
+		font-family: "Shrikhand", sans-serif;
+		height: 1.6rem;
+		margin: 1.2rem 0 0.7rem 0;
+	}
+}
+
+
+.heading__location {
+	@include flex-center;
+	background-color: $gray;
+	height: 2.5rem;
+	border-top: solid 3px lightgray;
+	p {
+		font-size: 0.8rem;
+		font-weight: bold;
+	}
+	.heading__img {
+		width: 1.8rem;
+		font-size: 0.8rem;
+		font-weight: bold;
+	}
+}
+
+.heading__research {
+	text-align: center;
+	background-color: $lightergray;
+	flex-direction: column;
+
+	.heading__title {
+		font-size: 1.3rem;
+		font-weight: bold;
+		margin: 0 2.7rem 0 2.7rem;
+		padding: 1rem 0 0.5rem 0;
+	}
+
+	.heading__description {
+		font-size: 0.9rem;
+		font-weight: 350;
+		margin: 0 1.4rem 0 1.4rem;
+	}
+
+	.btn {
+		@include btn-rounded;
+	}
+}
+
+/********** Partie Fonctionnement **********/
+.functionning {
+	padding: 2rem 0 0 0;
+	margin: 0 0 0 1rem;
+
+	&__title {
+		font-size: 1.2rem;
+	}
+
+	&__booking {
+		position: relative;
+		height: 4rem;
+		background-color: $lightergray;
+		border-radius: 1rem;
+		margin: 1.4rem 0.9rem 0 0.3rem;
+		@include flex-center;
+		&--purple {
+			background-color: $lightpruple;
+		}
+	}
+
+	.number {
+		@include numbers;
+		@include flex-center;
+	}
+
+	.img {
+		@include img;
+		color: gray;
+	}
+
+	.img--purple{
+		color: $color-primary;
+		font-size: 0.8rem;
+	}
+
+	.info {
+		@include info;
+	}
+}
