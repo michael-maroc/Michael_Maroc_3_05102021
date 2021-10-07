@@ -1,0 +1,326 @@
+/********** Colors **********/
+/********** Partie Mixins **********/
+/********** General **********/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'roboto';
+}
+
+/********** Partie Header **********/
+.heading__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.heading__card .heading__logo {
+  font-family: "Shrikhand", sans-serif;
+  height: 1.6rem;
+  margin: 1.2rem 0 0.7rem 0;
+}
+
+.heading__location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #eaeaea;
+  height: 2.5rem;
+  border-top: solid 3px lightgray;
+}
+
+.heading__location p {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.heading__location .heading__img {
+  width: 1.8rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.heading__research {
+  text-align: center;
+  background-color: #f6f6f6;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.heading__research .heading__title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0 2.7rem 0 2.7rem;
+  padding: 1rem 0 0.5rem 0;
+}
+
+.heading__research .heading__description {
+  font-size: 0.9rem;
+  font-weight: 350;
+  margin: 0 1.4rem 0 1.4rem;
+}
+
+.heading__research .btn {
+  border: none;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(to bottom, #FF79DA, #9356DC);
+  border-radius: 999px;
+  padding: .7rem 1.1rem .7rem 1.1rem;
+  color: #fff;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/********** Partie Fonctionnement **********/
+.functionning {
+  padding: 2rem 0 0 0;
+  margin: 0 1rem 0 1.5rem;
+}
+
+.functionning__title {
+  font-size: 1.2rem;
+}
+
+.functionning__booking {
+  position: relative;
+  height: 4rem;
+  background-color: #f6f6f6;
+  border-radius: 1rem;
+  margin: 1.4rem 0 0 0;
+  -webkit-box-shadow: #eaeaea 5px 5px 5px;
+          box-shadow: #eaeaea 5px 5px 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.functionning__booking--purple {
+  background-color: #f5edff;
+}
+
+.functionning .number {
+  position: absolute;
+  font-size: 0.7rem;
+  left: -3%;
+  text-align: center;
+  width: 5px;
+  height: 0.2rem;
+  padding: 0.6rem;
+  color: #fff;
+  background-color: #9356DC;
+  border-radius: 999px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.functionning .img {
+  position: absolute;
+  left: 8%;
+  text-align: center;
+  width: 2rem;
+  color: gray;
+}
+
+.functionning .img--purple {
+  color: #9356DC;
+  font-size: 0.8rem;
+}
+
+.functionning .info {
+  position: absolute;
+  left: 24%;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/********** Partie Main **********/
+.main__wrapper {
+  width: 100%;
+  padding-top: 3rem;
+  margin-top: 3.5rem;
+  background: #f6f6f6;
+}
+
+.main__wrapper .main__content {
+  margin: 0 1rem 0 1rem;
+}
+
+.main__wrapper .main__content .main__heading {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.restaurants {
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  -webkit-box-shadow: #eaeaea 5px 5px 5px;
+          box-shadow: #eaeaea 5px 5px 5px;
+}
+
+.restaurants .restaurant__img {
+  height: 8.5rem;
+  background-position: center;
+  background-size: cover;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.restaurants .restaurant__img-1 {
+  position: relative;
+  background-image: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+}
+
+.restaurants .restaurant__img-1 p {
+  position: absolute;
+  background-color: #99E2D0;
+  color: green;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.4rem 0.7rem 0.4rem 0.7rem;
+  top: 10px;
+  right: 10px;
+  font-family: 'roboto';
+}
+
+.restaurants .restaurant__img-2 {
+  position: relative;
+  background-image: url("../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+}
+
+.restaurants .restaurant__img-2 p {
+  position: absolute;
+  background-color: #99E2D0;
+  color: green;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.4rem 0.7rem 0.4rem 0.7rem;
+  top: 10px;
+  right: 10px;
+  font-family: 'roboto';
+}
+
+.restaurants .restaurant__img-3 {
+  background-image: url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+}
+
+.restaurants .restaurant__img-4 {
+  background-image: url("../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+}
+
+.test {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1.2rem  0.6rem;
+  height: 4rem;
+}
+
+.test .restaurant__info h3 {
+  font-size: 1rem;
+  padding-top: 0.5rem;
+}
+
+.test .restaurant__info p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding-top: 0.2rem;
+}
+
+.test .far {
+  font-size: 1.2rem;
+}
+
+.test .far:hover {
+  cursor: pointer;
+  background-color: linear-gradient(#FF79DA, #9356DC);
+  -webkit-transition: ease-in-out 300ms;
+  transition: ease-in-out 300ms;
+}
+
+.footer__wrapper {
+  background: #353535;
+  color: #fff;
+  margin-top: 3.2rem;
+  padding-bottom: 2rem;
+}
+
+.footer__wrapper .footer__content {
+  margin: 0 1.2rem 0 1.2rem;
+}
+
+.footer__wrapper .footer__content .footer__heading {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: 'Shrikhand';
+}
+
+.footer__wrapper .footer__content p {
+  font-size: 0.8rem;
+}
+
+.footer__service {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__service .footer__img1 i {
+  font-size: 0.7rem;
+  margin-right: 0.6rem;
+}
+
+.footer__service .footer__img2 i {
+  font-size: 0.6rem;
+  margin-right: 0.5rem;
+}
+
+.mentions {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+/*# sourceMappingURL=style.css.map */

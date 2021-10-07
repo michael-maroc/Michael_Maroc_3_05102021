@@ -1,0 +1,60 @@
+/********** Partie Mixins **********/
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin btn-rounded {
+	border: none;
+    background: linear-gradient(to bottom, $color-secondary, $color-primary);
+    border-radius: 999px;
+    padding: .7rem 1.1rem .7rem 1.1rem;
+    color: #fff;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+@mixin box-shadow {
+    box-shadow: $gray 5px 5px 5px;
+}
+
+@mixin numbers {
+	position: absolute;
+    font-size: 0.7rem;
+    left: -3%;
+    text-align: center;
+    width: 5px;
+    height: 0.2rem;
+    padding: 0.6rem;
+    color: $white;
+    background-color: $color-primary;
+    border-radius: 999px;
+}
+
+@mixin img {
+	position: absolute;
+    left: 8%;
+    text-align: center;
+    width: 2rem;
+}
+
+@mixin info {
+	position: absolute;
+    left: 24%;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+@mixin restaurant-card {
+    height: 8.5rem;
+    background-position: center;
+    background-size: cover;
+    border-radius: 1rem 1rem 0 0;
+}
