@@ -1,66 +1,64 @@
 /********** General **********/
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+*  {
+	@include reset;
 }
 
 body {
-    height: 100%;
-    width: 100%;
-	font-family: 'roboto';
+    @include police-primary;
+    a {
+        color: black;
+    }
 }
 
+/********** Header **********/
+.heading {
+    .heading__card {
+        @include flex-center;
+        .heading__logo {
+            font-family: "Shrikhand", sans-serif;
+            height: 1.6rem;
+            margin: 1.2rem 0 0.7rem 0;
+        }
+    }
 
+    .heading__location {
+        @include flex-center;
+        background-color: $gray;
+        height: 2.5rem;
+        border-top: solid 3px lightgray;
+        p {
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .heading__img {
+            width: 1.8rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+    }
 
+    .heading__research {
+        text-align: center;
+        background-color: $lightergray;
+        flex-direction: column;
+        .heading__title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 0 2.7rem 0 2.7rem;
+            padding: 1rem 0 0.5rem 0;
+        }
 
-/********** Partie Header **********/
-.heading__card {
-	@include flex-center;
-	.heading__logo {
-		font-family: "Shrikhand", sans-serif;
-		height: 1.6rem;
-		margin: 1.2rem 0 0.7rem 0;
-	}
-}
+        .heading__description {
+            font-size: 0.9rem;
+            font-weight: 350;
+            margin: 0 1.4rem 0 1.4rem;
+        }
 
-
-.heading__location {
-	@include flex-center;
-	background-color: $gray;
-	height: 2.5rem;
-	border-top: solid 3px lightgray;
-	p {
-		font-size: 0.8rem;
-		font-weight: bold;
-	}
-	.heading__img {
-		width: 1.8rem;
-		font-size: 0.8rem;
-		font-weight: bold;
-	}
-}
-
-.heading__research {
-	text-align: center;
-	background-color: $lightergray;
-	flex-direction: column;
-	.heading__title {
-		font-size: 1.3rem;
-		font-weight: bold;
-		margin: 0 2.7rem 0 2.7rem;
-		padding: 1rem 0 0.5rem 0;
-	}
-
-	.heading__description {
-		font-size: 0.9rem;
-		font-weight: 350;
-		margin: 0 1.4rem 0 1.4rem;
-	}
-
-	.btn {
-		@include btn-rounded;
-	}
+        .heading__btn {
+            cursor: pointer;
+            @include btn-rounded;
+        }
+    }
 }
 
 /********** Partie Fonctionnement **********/
@@ -70,43 +68,44 @@ body {
 	&__title {
 		font-size: 1.2rem;
 	}
+    .functionning__link {
+        text-decoration: none;
+        color: black;
+    }
 	&__booking {
 		position: relative;
 		height: 4rem;
 		background-color: $lightergray;
 		border-radius: 1rem;
 		margin: 1.4rem 0 0 0;
+        cursor: pointer;
         @include box-shadow;
 		@include flex-center;
-		&--purple {
-			background-color: $lightpruple;
-		}
-	}
-
-	.number {
-		@include numbers;
-		@include flex-center;
-	}
-
-	.img {
-		@include img;
-		color: gray;
-	}
-
-	.img--purple{
-		color: $color-primary;
-		font-size: 0.8rem;
-	}
-
-	.info {
-		@include info;
-	}
+        &:hover {
+            background-color: $lightpurple;
+        }
+        .functionning__number {
+            @include numbers;
+            @include flex-center;
+        }
+    
+        .functionning__img {
+            @include img;
+            color: gray;
+        }
+    
+        .functionning__info {
+            @include info;
+        }
+    }
 }
 
+
 /********** Partie Main **********/
-.main__wrapper {
+.main {
     width: 100%;
     padding-top: 3rem;
+    padding-bottom: 2.2rem;
     margin-top: 3.5rem;
     background: $lightergray;
     .main__content {
@@ -115,97 +114,86 @@ body {
             font-size: 1.3rem;
             margin-bottom: 1rem;
         }
-    }
-}
-
-.restaurants {
-    margin-bottom: 1rem;
-    background-color: $white;
-    border-radius: 1rem;
-    @include box-shadow;
-    .restaurant__img {
-        @include restaurant-card;
-        &-1 {
-            position: relative;
-            background-image: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
-            p {
-                position: absolute;
-                background-color: $color-tertiary;
-                color: green;
-                font-size: 0.7rem;
-                font-weight: 500;
-                padding: 0.4rem 0.7rem 0.4rem 0.7rem;
-                top: 10px;
-                right: 10px;
-                font-family: 'roboto';
-                
+        .main__restaurants {
+            margin-bottom: 1rem;
+            background-color: $white;
+            border-radius: 1rem;
+            box-shadow: lightgrey 0.2rem 0.2rem 0.3rem;
+            .restaurant__img {
+                @include restaurant-card;
+                &--1 {
+                    position: relative;
+                    background-image: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+                    p {
+                        position: absolute;
+                        background-color: $color-tertiary;
+                        color: green;
+                        font-size: 0.7rem;
+                        font-weight: 500;
+                        padding: 0.4rem 0.7rem 0.4rem 0.7rem;
+                        top: 0.7rem;
+                        right: 0.7rem;
+                        font-family: 'roboto';
+                    }
+                }
+                &--2 {
+                    position: relative;
+                    background-image: url("../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+                    p {
+                        position: absolute;
+                        background-color: $color-tertiary;
+                        color: green;
+                        font-size: 0.7rem;
+                        font-weight: 500;
+                        padding: 0.4rem 0.7rem 0.4rem 0.7rem;
+                        top: 0.7rem;
+                        right: 0.7rem;
+                        font-family: 'roboto';
+                    }
+                }
+                &--3 {
+                    background-image: url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+                }
+                &--4 {
+                    background-image: url("../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+                }
+            }
+            .main__test {
+                @include flex-between;
+                padding: 0 1.2rem  0.6rem;
+                height: 4rem;
+                .restaurant__info {
+                    & h3 {
+                        font-size: 1rem;
+                        padding-top: 0.5rem;
+                    }
+                    & p {
+                        font-size: 0.9rem;
+                        font-weight: 300;
+                        padding-top: 0.2rem;
+                    }
+                }
+                .fa-heart {
+                    font-size: 1.2rem;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
             }
         }
-        &-2 {
-            position: relative;
-            background-image: url("../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
-            p {
-                position: absolute;
-                background-color: $color-tertiary;
-                color: green;
-                font-size: 0.7rem;
-                font-weight: 500;
-                padding: 0.4rem 0.7rem 0.4rem 0.7rem;
-                top: 10px;
-                right: 10px;
-                font-family: 'roboto';
-                
-            }
-        }
-        &-3 {
-            background-image: url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
-        }
-        &-4 {
-            background-image: url("../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
-        }
     }
 }
 
-.test {
-    @include flex-between;
-    padding: 0 1.2rem  0.6rem;
-    height: 4rem;
-    .restaurant__info {
-        & h3 {
-            font-size: 1rem;
-            padding-top: 0.5rem;
-            
-        }
-        & p {
-            font-size: 0.9rem;
-            font-weight: 300;
-            padding-top: 0.2rem;
-        }
-    }
-    .far {
-        font-size: 1.2rem;
-        
-        &:hover {
-            cursor: pointer;
-            background-color: linear-gradient($color-secondary, $color-primary);
-            transition: ease-in-out 300ms;
-        }
-        &:active {
-            
-        }
-    }
-}
-
+/********** Footer **********/
 .footer__wrapper {
     background: #353535;
     color: $white;
-    margin-top: 3.2rem;
     padding-bottom: 2rem;
     & .footer__content {
         margin: 0 1.2rem 0 1.2rem;
         & .footer__heading {
             padding-top: 1rem;
-            padding-bottom: 1rem;
+            padding-bottom: 0.7rem;
             font-size: 1rem;
             font-weight: 400;
             font-family: 'Shrikhand';
@@ -214,22 +202,25 @@ body {
             font-size: 0.8rem;
         }
     }
-}
-
-.footer__service {
-    display: flex;
-    align-items: center;
-    .footer__img1 i{
-        font-size:  0.7rem;
-        margin-right: 0.6rem;
+    .footer__service {
+        display: flex;
+        align-items: center;
+        .footer__img1 i{
+            font-size:  0.7rem;
+            margin-right: 0.6rem;
+        }
+        .footer__img2 i{
+            font-size: 0.5rem;
+            margin-right: 0.6rem;
+        }
     }
-    .footer__img2 i{
-        font-size: 0.6rem;
-        margin-right: 0.5rem;
+    .mentions {
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
     }
-}
-
-.mentions {
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
+    .contact {
+        color: $white;
+        font-size: 0.8rem;
+        cursor: pointer;
+    }
 }

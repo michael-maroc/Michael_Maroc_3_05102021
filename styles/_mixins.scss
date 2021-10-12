@@ -1,4 +1,24 @@
 /********** Partie Mixins **********/
+@mixin reset {
+    margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    text-decoration: none;
+}
+
+@mixin default-measures {
+    height: 100%;
+    width: 100%;
+}
+
+@mixin police-primary {
+    font-family: 'roboto', sans-serif;
+}
+
+@mixin police-secondary {
+    font-family: 'Shrikhand', sans-serif;
+}
+
 @mixin flex-center {
 	display: flex;
 	justify-content: center;
@@ -11,14 +31,29 @@
     align-items: center;
 }
 
-@mixin btn-rounded {
+@mixin flex-around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@mixin btn-home {
 	border: none;
     background: linear-gradient(to bottom, $color-secondary, $color-primary);
-    border-radius: 999px;
-    padding: .7rem 1.1rem .7rem 1.1rem;
+    border-radius: 10rem;
+    padding: .8rem 1rem .8rem 1rem;
     color: #fff;
     margin-top: 1.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
+}
+
+@mixin btn-menu {
+    border: none;
+    background: linear-gradient(to bottom, $color-secondary, $color-primary);
+    padding: 0.8rem 2.5rem 0.8rem 2.5rem;
+    border-radius: 10rem;
+    color: #fff;
+    box-shadow: lightgrey 0.2rem 0.2rem 0.3rem;
 }
 
 @mixin box-shadow {
