@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    
     <!---------- Header ---------->
     <header class="heading">
         <div class="heading__card">
@@ -26,78 +27,89 @@
             <p>Paris, Belleville</p>
         </div>
         <div class="heading__research">
-            <h1 class="heading__title">Réservez le menu qui vous convient</h1>
+            <h2 class="heading__title">Réservez le menu qui vous convient</h2>
             <p class="heading__description">Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-            <button class="btn">Explorer nos restaurants</button>
+            <button class="heading__btn">Explorer nos restaurants</button>
         </div>
     </header>
+
     <!---------- Fonctionnement ---------->
     <section class="functionning">
         <h2 class="functionning__title">Fonctionnement</h2>
+        <a href="#restaurants" class="functionning__link">
+            <div class="functionning__booking">
+                <p class="functionning__number">1</p>
+                <div class="functionning__img"><i class="fas fa-mobile-alt"></i></div>
+                <p class="functionning__info">Choisissez un restaurant</p>
+            </div>
+        </a>
         <div class="functionning__booking">
-            <p class="number">1</p>
-            <div class="img"><i class="fas fa-mobile-alt"></i></div>
-            <p class="info">Choisissez un restaurant</p>
+            <p class="functionning__number">2</p>
+            <div class="functionning__img"><i class="fas fa-list-ul"></i></div>
+            <p class="functionning__info">Composez votre menu</p>
         </div>
         <div class="functionning__booking">
-            <p class="number">2</p>
-            <div class="img"><i class="fas fa-list-ul"></i></div>
-            <p class="info">Composez votre menu</p>
-        </div>
-        <div class="functionning__booking functionning__booking--purple">
-            <p class="number">3</p>
-            <div class="img img--purple"><i class="fas fa-store"></i></div>
-            <p class="info">Dégustez au restaurant</p>
+            <p class="functionning__number">3</p>
+            <div class="functionning__img"><i class="fas fa-store"></i></div>
+            <p class="functionning__info">Dégustez au restaurant</p>
         </div>
     </section>
 
     <!---------- Partie Main ---------->
-    <main class="main__wrapper">
+    <main id="restaurants" class="main">
         <div class="main__content">
             <h2 class="main__heading">Restaurants</h2>
-            <section class="restaurants">
-                <div class="restaurant__img restaurant__img-1">
-                    <p class="restaurant__img-new">Nouveau</p>
-                </div>
-                <div class="test">
-                    <div class="restaurant__info">
-                        <h3>La palette du goût</h3>
-                        <p>Ménilmontant</p>
+            <section class="main__restaurants">
+                <a href="./Lapalettedugout.html">
+                    <div class="restaurant__img restaurant__img--1">
+                        <p class="restaurant__img--new">Nouveau</p>
                     </div>
-                    <div class="img_holder"><i class="far fa-heart"></i></div>
-                </div>
+                    <div class="main__test">
+                        <div class="restaurant__info">
+                            <h3>La palette du goût</h3>
+                            <p>Ménilmontant</p>
+                        </div>
+                        <div class="img_holder"><i class="far fa-heart"></i></div>
+                    </div>
+                </a>
             </section>
-            <section class="restaurants">
-                <div class="restaurant__img restaurant__img-2">
-                    <p class="restaurant__img-new">Nouveau</p>
-                </div>
-                <div class="test">
-                    <div class="restaurant__info">
-                        <h3>La note enchantée</h3>
-                        <p>Charonne</p>
+            <section class="main__restaurants">
+                <a href="./Lanoteenchantee.html">
+                    <div class="restaurant__img restaurant__img--2">
+                        <p class="restaurant__img-new">Nouveau</p>
                     </div>
-                    <div class="img_holder"><i class="far fa-heart"></i></div>
-                </div>
+                    <div class="main__test">
+                        <div class="restaurant__info">
+                            <h3>La note enchantée</h3>
+                            <p>Charonne</p>
+                        </div>
+                        <div class="img_holder"><i class="far fa-heart"></i></div>
+                    </div>
+                </a>
             </section>
-            <section class="restaurants">
-                <div class="restaurant__img restaurant__img-3"></div>
-                <div class="test">
-                    <div class="restaurant__info">
-                        <h3>À la française</h3>
-                        <p>Cité Rouge</p>
+            <section class="main__restaurants">
+                <a href="./Alafrancaise.html">
+                    <div class="restaurant__img restaurant__img--3"></div>
+                    <div class="main__test">
+                        <div class="restaurant__info">
+                            <h3>À la française</h3>
+                            <p>Cité Rouge</p>
+                        </div>
+                        <div class="img_holder"><i class="far fa-heart"></i></div>
                     </div>
-                    <div class="img_holder"><i class="far fa-heart"></i></div>
-                </div>
+                </a>
             </section>
-            <section class="restaurants">
-                <div class="restaurant__img restaurant__img-4"></div>
-                <div class="test">
-                    <div class="restaurant__info">
-                        <h3>Le délice des sens</h3>
-                        <p>Folie-Méricourt</p>
+            <section class="main__restaurants">
+                <a href="./Ledelicedessens.html">
+                    <div class="restaurant__img restaurant__img--4"></div>
+                    <div class="main__test">
+                        <div class="restaurant__info">
+                            <h3>Le délice des sens</h3>
+                            <p>Folie-Méricourt</p>
+                        </div>
+                        <div class="img_holder"><i class="far fa-heart"></i></div>
                     </div>
-                    <div class="img_holder"><i class="far fa-heart"></i></div>
-                </div>
+                </a>
             </section>
         </div>
     </main>
@@ -115,7 +127,7 @@
                 <p>Devenir partenaire</p>
             </div>
             <p class="mentions">Mentions légales</p>
-            <p>Contact</p>
+            <a href="mailto:ohmyfood@hotmail.fr" class="contact">Contact</a>
         </div>
     </footer>
 </body>
