@@ -29,10 +29,11 @@ h1 {
 
 /********** Partie Header **********/
     .header {
+        width: 100%;
         &__heading {
             @include flex-center;
             position: relative;
-            padding: 1.2rem 0 0.7rem 0;
+            padding: 1.15rem 0 0.65rem 0;
             & .fa-arrow-left {
                 position: absolute;
                 left: 1rem;
@@ -46,7 +47,7 @@ h1 {
         &__banner {
             width: 100%;
             &__img {
-                height: auto;
+                height: 13rem;
                 width: 100%;
                 object-fit: cover;
             }
@@ -64,6 +65,13 @@ h1 {
         border-radius: 2rem 2rem 0 0;
         position: relative;
         bottom: 2rem;
+        &__btn-holder {
+            @include flex-center;
+            height: 6rem;
+            a {
+                @include btn-menu;
+            }
+        }
         &__heading {
             @include flex-between;
             margin-bottom: 1.5rem;
@@ -113,13 +121,7 @@ h1 {
                     
                 }
             }
-            .btn__holder {
-                @include flex-center;
-                height: 6rem;
-                .btn {
-                    @include btn-menu;
-                }
-            }
+            
         }
     }
 }

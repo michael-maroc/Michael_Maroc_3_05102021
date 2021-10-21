@@ -20,6 +20,10 @@ body a {
 }
 
 /********** Header **********/
+.header {
+  width: 100%;
+}
+
 .header__card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -155,6 +159,10 @@ body a {
 
 .functionning__content__booking:hover {
   background-color: #f5edff;
+}
+
+.functionning__content__booking:hover > .functionning__content__booking__img {
+  color: #9356DC;
 }
 
 .functionning__content__booking__number {
@@ -401,19 +409,19 @@ body a {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .heading {
+  .header {
     width: 90%;
   }
-  .heading__card .fa-arrow-left {
+  .header__card .fa-arrow-left {
     font-size: 1.4rem;
   }
-  .heading__card__logo {
+  .header__card__logo {
     height: 2rem;
   }
-  .heading__location i {
+  .header__location i {
     font-size: 1rem;
   }
-  .heading__location p {
+  .header__location p {
     font-size: 1rem;
   }
   .functionning {
@@ -451,22 +459,22 @@ body a {
 }
 
 @media screen and (min-width: 992px) {
-  .heading {
+  .header {
     width: 100%;
   }
-  .heading__card {
+  .header__card {
     height: auto;
   }
-  .heading__card__logo {
+  .header__card__logo {
     height: 2.2rem;
   }
-  .heading__location {
+  .header__location {
     height: 3rem;
   }
-  .heading__location i {
+  .header__location i {
     font-size: 1rem;
   }
-  .heading__location p {
+  .header__location p {
     font-size: 1.2rem;
   }
   .functionning__heading {
