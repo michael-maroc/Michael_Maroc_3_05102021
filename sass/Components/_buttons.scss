@@ -1,0 +1,10 @@
+.home-btn {
+    @include btn-home;
+    cursor: pointer;
+    color: $white;
+    font-size: 0.8rem;
+}
+
+.heart {
+    @include heart;
+}

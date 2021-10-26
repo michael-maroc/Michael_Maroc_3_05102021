@@ -1,0 +1,54 @@
+@keyframes loader {
+    0% {
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes loader-container {
+    0%{
+        opacity: 1;
+    }
+    99%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes appearance-delay {
+    0%{
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    85%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0%;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
