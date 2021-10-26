@@ -1,0 +1,44 @@
+.footer {
+    width: 100%;
+    background: #353535;
+    color: $white;
+    padding-bottom: 2rem;
+    &__content {
+        padding-left: 6%;
+        &__heading {
+            padding-top: 1rem;
+            padding-bottom: 0.7rem;
+            font-size: 1rem;
+            font-weight: 400;
+            font-family: 'Shrikhand';
+        }
+        &__service {
+            display: flex;
+            align-items: center;
+            padding-bottom: 0.4rem;
+            &__img {
+                font-size:  0.7rem;
+                margin-right: 0.6rem;
+                .fa-utensils {
+                    margin-right: 0.1rem;
+                }
+                .hands_helping {
+                    transform: rotate(-15deg);
+                    font-size: 0.58rem;
+                }
+            }
+            .mentions {
+                font-weight: 300;
+            }
+            .contact {
+                color: $white;
+                font-size: 0.8rem;
+                font-weight: 300;
+                cursor: pointer;
+            }
+            p {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}

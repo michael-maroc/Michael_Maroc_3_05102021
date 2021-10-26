@@ -1,0 +1,405 @@
+@import '/sass/utils/variables';
+@import '/sass/utils/mixins';
+@import '/sass/utils/keyframes';
+
+/********** General **********/
+* {
+    @include reset;
+}
+
+body {
+    @include police-primary;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+#body__container {
+    @include flex-center;
+    flex-direction: column;
+}
+
+a {
+    color: black;
+}
+
+h1 {
+    @include police-secondary;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 0 0 0 0.5rem;
+}
+
+h2 {
+    font-size: 0.78rem;
+    font-weight: 300;
+    margin: 0 0 0.9rem 0.5rem;
+    padding: 0 0 0.3rem 0;
+    border-bottom: $color-tertiary solid 0.15rem;
+    width: 2.2rem;
+}
+
+h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+h4 {
+    @include police-secondary;
+    padding-top: 1rem;
+    padding-bottom: 0.6rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+/********** Partie Header **********/
+.header {
+    width: 100%;
+    &__heading {
+        @include flex-center;
+        position: relative;
+        padding: 1.15rem 0 0.65rem 0;
+        & .fa-arrow-left {
+            position: absolute;
+            left: 1rem;
+            bottom: 0.9rem;
+            font-size: 1.1rem;
+        }
+        &__logo {
+            width: 8.5rem;
+        }
+    }
+    &__banner {
+        width: 100%;
+        &__img {
+            height: 13rem;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+/********** Partie Main **********/
+.main {
+    width: 100%;
+    padding-bottom: 2rem;
+    background-color: $lightergray;
+    &__container {
+        height: 100%;
+        background: $lightergray;
+        padding: 1.5rem 1rem 0 1rem;
+        border-radius: 2rem 2rem 0 0;
+        position: relative;
+        bottom: 2rem;
+        &__heading {
+            @include flex-between;
+            margin-bottom: 1.5rem;
+            .heart {
+                @include heart;
+            }
+        }
+    }
+}
+
+.menus {
+    &__entrees {
+        margin-bottom: 2rem;
+        &--delay1 {
+            animation: fade-in ease-in-out .8s;
+        }
+        &--delay2 {
+            animation: fade-in ease-in-out 1.8s;
+        }
+        &--delay3 {
+            animation: fade-in ease-in-out 2.3s;
+        }
+        &__card {
+            @include flex-between;
+            position: relative;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 100%;
+            background: $white;
+            margin: 0 0 0.7rem 0;
+            padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+            border-radius: 1rem;
+            box-shadow: lightgray 1px 1px 5px;
+            &:hover .reserved>.price {
+                margin-right: 4rem;
+            }
+            &:hover .reserved>.hidden {
+                margin-right: 0;
+                opacity: 1;
+            }
+            &:hover .reserved>.hidden>.checked {
+                transform: rotate(0deg);
+            }
+        }
+    }
+}
+
+.ingredients {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    p {
+        font-size: 0.8rem;
+        font-weight: 300;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+.reserved {
+    @include flex-center;
+    height: 100%;
+}
+.price {
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding-top: 1.5rem;
+    margin-left: 1rem;
+    transition: 500ms ease-in-out;
+}
+.hidden {
+    position: absolute;
+    width: 4rem;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    right: 0;
+    background-color: $color-tertiary;
+    text-align: center;
+    margin-right: -20%;
+    opacity: 0;
+    transition: ease-in-out 500ms;
+    .checked {
+        font-size: 1.6rem;
+        height: 100%;
+        color: white;
+        background-color: $color-tertiary;
+        transition: 550ms ease-in-out;
+        transform: rotate(-180deg);
+    }
+}
+
+.btn-holder {
+    text-align: center;
+    position: relative;
+    bottom: 1.6rem;
+    .btn {
+        @include btn-menu;
+    }
+}
+
+/********** Footer **********/
+.footer {
+    @include flex-between;
+    width: 100%;
+    background: #353535;
+    color: $white;
+    padding-bottom: 2rem;
+    &__content {
+        margin: 0 1.2rem 0 1.2rem;
+        &__service {
+            display: flex;
+            align-items: center;
+            margin: 0.3rem 0 0.3rem 0;
+            &__img1 i{
+                display: flex;
+                align-items: center;
+                font-size:  0.7rem;
+                margin-right: 0.6rem;
+            }
+            &__img2 i{
+                display: flex;
+                align-items: center;
+                font-size: 0.5rem;
+                margin-right: 0.6rem;
+            }
+            & p {
+                font-size: 0.8rem;
+            }
+        }
+        &__mentions {
+            font-size: 0.8rem;
+            font-weight: 300;
+        }
+        &__contact {
+            color: $white;
+            font-size: 0.8rem;
+            font-weight: 300;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        width: 90%;
+        &__heading {
+            &__logo {
+                width: 10.5rem;
+            }
+            .fa-arrow-left {
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    .main {
+        width: 90%;
+        margin: 0 0 3rem 0;
+        border-radius: 0 0 2rem 2rem;
+        &__container {
+            @include flex-center;
+            flex-direction: column;
+            &__heading {
+                width: 65%
+            }
+        }
+    }
+    .menus {
+        @include flex-center;
+        flex-direction: column;
+        width: 100%;
+        &__entrees {
+            @include flex-center;
+            flex-direction: column;
+            width: 90%;
+            &__card {
+                width: 70%;
+            }
+        }
+    }
+    .btn {
+        @include btn-menu;
+        transform: scale(1.2);
+    }
+
+    .footer {
+        width: 100%;
+        &__content {
+            @include reset;
+            margin: 0 0 0 3rem;
+            &__heading {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .header {
+        width: 100%;
+        &__banner {
+            height: 25rem;
+            &__img {
+                height: 100%;
+            }
+        }
+        &__heading {
+            .fa-arrow-left {
+                font-size: 1.5rem;
+                bottom: 1rem;
+            }
+            &__logo {
+                width: 12.5rem;
+            }
+        }
+    }
+
+    .main {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        &__container {
+            @include flex-center;
+            flex-direction: column;
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            &__heading {
+                width: 92%;
+                padding: 0;
+                h1 {
+                    font-size: 1.8rem;
+                    padding: 0;
+                }
+                .fa-heart {
+                    font-size: 1.8rem;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .menus {
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 95%;
+        &__entrees {
+            width: 32%;
+            align-items: unset;
+            h2 {
+                margin-left: 0.5rem;
+            }
+            &__card {
+                display: flex;
+                width: 100%;
+                height: auto;
+                h3 {
+                    font-size: 1rem;
+                    padding-bottom: 0.2rem;
+                }
+            }
+        }
+    }
+    .btn {
+        @include btn-menu;
+        transform: scale(1.4);
+    }
+            
+    .ingredients {
+        font-size: 0.9rem;
+        padding-top: 0.2rem;
+        p {
+            font-size: 0.9rem;
+        }
+        span {
+            padding-left: 1.5rem;
+        }
+    }
+    
+    .footer {
+        width: 100%;
+        &__content {
+            width: 100%;
+            margin-left: 3rem;
+            &__heading {
+                font-size: 1.2rem;
+            }
+            &__service p {
+                font-size: 0.9rem;
+            }
+            &__service i {
+                font-size: 0.8rem;
+
+            }
+            &__mentions {
+                font-size: 0.9rem;
+                margin-bottom: 0.2rem;
+            }
+            &__contact {
+                font-size: 0.9rem;
+                font-weight: 300;
+            }
+        }
+    }
+}

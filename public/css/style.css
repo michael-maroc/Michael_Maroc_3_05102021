@@ -1,6 +1,117 @@
 /********** Colors **********/
 /********** Partie Mixins **********/
-/********** General **********/
+@-webkit-keyframes loader {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+@keyframes loader {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes loader-container {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes loader-container {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes appearance-delay {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appearance-delay {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0%;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0%;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* General */
 * {
   margin: 0;
   padding: 0;
@@ -10,21 +121,17 @@
 }
 
 body {
-  height: 100%;
-  width: 100%;
   font-family: 'roboto', sans-serif;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-body a {
+a {
   color: black;
 }
 
-/********** Header **********/
-.header {
-  width: 100%;
-}
-
-.header__card {
+/* Partie Loader */
+.loader {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,23 +141,67 @@ body a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: white;
+  -webkit-animation: loader-container 3s linear forwards;
+          animation: loader-container 3s linear forwards;
 }
 
-.header__card a {
-  position: absolute;
-  left: 1rem;
-  bottom: 0.9rem;
-  font-size: 1.1rem;
+.loader__item {
+  margin: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border: solid 6px lightgray;
+  border-radius: 3rem;
+  -webkit-animation: loader 3s linear forwards;
+          animation: loader 3s linear forwards;
 }
 
-.header__card__logo {
-  font-family: "Shrikhand", sans-serif;
-  height: 1.5rem;
-  margin: 1.2rem 0 0.7rem 0;
+.loader__item--1 {
+  border-top-color: #9356DC;
+  border-bottom-color: #9356DC;
 }
 
-.header__location {
+.loader__item--2 {
+  border-top-color: #FF79DA;
+  border-bottom-color: #FF79DA;
+}
+
+.loader__item--3 {
+  border-top-color: #99E2D0;
+  border-bottom-color: #99E2D0;
+}
+
+.testing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-animation: appearance-delay 4s linear forwards;
+          animation: appearance-delay 4s linear forwards;
+}
+
+.location {
+  width: 100%;
+}
+
+.location__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,52 +216,38 @@ body a {
   border-top: solid 3px lightgray;
 }
 
-.header__location p {
+.location__content p {
   font-size: 0.8rem;
   font-weight: 500;
 }
 
-.header__location i {
+.location__content i {
   width: 1.5rem;
   font-size: 0.8rem;
   font-weight: bold;
 }
 
-.header__research {
+.location__research {
   text-align: center;
   background-color: #f6f6f6;
   padding-bottom: 3.4rem;
 }
 
-.header__research__heading {
+.location__research__heading {
   font-size: 1.2rem;
   font-weight: 800;
   padding: 1.8rem 3rem 0.5rem 3rem;
 }
 
-.header__research__description {
+.location__research__description {
   font-size: 0.9rem;
   font-weight: 350;
   margin-bottom: 2rem;
 }
 
-.header__research__link {
-  border: none;
-  background: linear-gradient(-5deg, #9356DC, #FF79DA);
-  border-radius: 10rem;
-  padding: .8rem 1rem .8rem 1rem;
-  color: #fff;
-  margin-top: 1.5rem;
-  margin-bottom: 2.5rem;
-  -webkit-box-shadow: silver 0rem 0.3rem 0.3rem;
-          box-shadow: silver 0rem 0.3rem 0.3rem;
-  cursor: pointer;
-  color: #fff;
-  font-size: 0.8rem;
-}
-
 /********** Partie Fonctionnement **********/
 .functionning {
+  width: 100%;
   padding: 2rem 0 0 0;
 }
 
@@ -320,15 +457,43 @@ body a {
   padding-top: 0.2rem;
 }
 
-.main__content__restaurants .fa-heart {
-  font-size: 1.2rem;
+/********** Header **********/
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
 }
 
-.main__content__restaurants .fa-heart:hover {
-  cursor: pointer;
+.header__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
 }
 
-/********** Footer **********/
+.header__card__logo {
+  font-family: "Shrikhand", sans-serif;
+  height: 1.5rem;
+  margin: 1.2rem 0 0.7rem 0;
+}
+
 .footer {
   width: 100%;
   background: #353535;
@@ -388,13 +553,46 @@ body a {
   font-size: 0.8rem;
 }
 
+.home-btn {
+  border: none;
+  background: linear-gradient(-5deg, #9356DC, #FF79DA);
+  border-radius: 10rem;
+  padding: .8rem 1rem .8rem 1rem;
+  color: #fff;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+  -webkit-box-shadow: silver 0rem 0.3rem 0.3rem;
+          box-shadow: silver 0rem 0.3rem 0.3rem;
+  cursor: pointer;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.home-btn:hover {
+  opacity: 0.9;
+  -webkit-box-shadow: grey 0rem 0.3rem 0.3rem;
+          box-shadow: grey 0rem 0.3rem 0.3rem;
+}
+
+.heart {
+  color: black;
+  cursor: pointer;
+}
+
+.heart:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#9356DC), to(#FF79DA));
+  background: linear-gradient(90deg, #9356DC, #FF79DA);
+  background: -webkit-linear-gradient(90deg, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  -webkit-animation: fade-in ease-in-out 0.4s;
+          animation: fade-in ease-in-out 0.4s;
+}
+
 @media screen and (min-width: 768px) {
   body {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    text-decoration: none;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -431,6 +629,9 @@ body a {
   .functionning__heading {
     text-align: center;
     font-size: 1.4rem;
+  }
+  .functionning__content__booking__info {
+    left: 39%;
   }
   .main {
     width: 90%;
