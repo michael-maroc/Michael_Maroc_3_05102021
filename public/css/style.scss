@@ -1,15 +1,8 @@
-@import '/sass/utils/variables';
-
-@import '/sass/utils/mixins';
-
-@import '/sass/utils/keyframes';
-
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+@import '../../sass/utils/keyframes';
+@import '../../sass/Layout/header';
 @import './home';
-
-@import '/sass/Layout/header';
-
-@import '/sass/Layout/footer';
-
-@import '/sass/Components/buttons';
-
-@import '/sass/utils/breakpoints';
+@import '../../sass/Components/buttons';
+@import '../../sass/Layout/footer';
+@import '../../sass/utils/breakpoints';

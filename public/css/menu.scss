@@ -1,6 +1,6 @@
-@import '/sass/utils/variables';
-@import '/sass/utils/mixins';
-@import '/sass/utils/keyframes';
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+@import '../../sass/utils/keyframes';
 
 /********** General **********/
 * {
@@ -189,8 +189,6 @@ h4 {
 
 .btn-holder {
     text-align: center;
-    position: relative;
-    bottom: 1.6rem;
     .btn {
         @include btn-menu;
     }
